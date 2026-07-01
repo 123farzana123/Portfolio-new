@@ -126,6 +126,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }
+
+    /* =========================
+    Marketing Start
+  ========================= */
+  
+  // Case Studies
+
+  const caseLinks = document.querySelectorAll(".card-link");
+  const caseStudies = document.querySelectorAll("#case-jlegacy, #case-agilis");
+
+  caseLinks.forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      // Hide all case studies
+      caseStudies.forEach(study => {
+        study.classList.remove("case-study-active");
+      });
+
+      // Show selected one
+      const target = document.querySelector(this.getAttribute("href"));
+
+      if (target) {
+        target.classList.add("case-study-active");
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+
+    });
+
+  });
 });
 
 function addMessage(message, className) {
@@ -176,3 +212,4 @@ function getBotResponse(message) {
 
   return "I can answer questions about Farzana's skills, projects, education, experience, GitHub, LinkedIn, and contact information.";
 }
+

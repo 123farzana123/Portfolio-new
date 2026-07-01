@@ -710,6 +710,44 @@ a:hover {
   margin-bottom: var(--space-8);
 }
 
+/* INTERNSHIP / EXPERIENCE CARDS */
+
+.internship-card {
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 14px;
+	padding: 20px;
+	margin-bottom: 20px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internship-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.internship-card h3 {
+	font-size: 1.1rem;
+	margin-bottom: 5px;
+	color: #111827;
+}
+
+.internship-card p {
+	margin-bottom: 10px;
+	color: #6b7280;
+	font-size: 0.95rem;
+}
+
+.internship-card ul {
+	padding-left: 18px;
+	color: #374151;
+	line-height: 1.6;
+}
+
+.internship-card ul li {
+	margin-bottom: 6px;
+}
+
 /* =========================
    LIST STYLING (SAAS CLEAN)
 ========================= */
@@ -1146,4 +1184,154 @@ a:hover {
     bottom: 85px;
     max-width: 220px;
   }
+}
+
+/* ==================================================
+   Marketing HTML Style
+================================================== */
+.marketing-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff, #f9f9f9);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-tagline {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* Primary */
+.primary-btn {
+  background: #111;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #333;
+}
+
+/* Secondary */
+.secondary-btn {
+  border: 1px solid #111;
+  color: #111;
+}
+
+.secondary-btn:hover {
+  background: #111;
+  color: white;
+}
+
+/* Outline */
+.outline-btn {
+  border: 1px dashed #999;
+  color: #555;
+}
+
+.outline-btn:hover {
+  border-color: #111;
+  color: #111;
+}
+
+/* Case Study */
+.case-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	margin-bottom: 20px;
+	border: 1px solid #e5e5e5;
+	border-radius: 12px;
+	padding: 20px;
+	background: #fff;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.case-card h3 {
+	margin-bottom: 8px;
+}
+
+.case-card ul {
+	margin-top: 10px;
+	padding-left: 18px;
+	font-size: 14px;
+	color: #555;
+}
+
+.case-card span {
+	display: inline-block;
+	margin-top: 10px;
+	font-weight: 600;
+	color: #0077ff;
+}
+
+/* Hide case study details by default */
+#case-jlegacy,
+#case-agilis {
+	display: none;
+	margin-top: 2rem;
+	padding: 2rem;
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	animation: fadeIn 0.3s ease;
+}
+
+/* Show selected case study */
+.case-study-active {
+	display: block !important;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

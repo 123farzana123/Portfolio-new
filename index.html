@@ -179,23 +179,28 @@
         <span class="tab-dot"></span>
         <div class="tab-chip">
           <span class="favicon-mini">FY</span>
-          <span>fastapi-instagram-publisher</span>
+          <span>task-manager-api</span>
         </div>
       </div>
       <div class="project-body">
-        <h3>AI Social Media Publishing API</h3>
+        <h3>Task Manager API — From In-Memory to Containerized Persistence</h3>
+        <p class="project-status">Self-paced practice project — Fly Rank AI</p>
         <p>
-          FastAPI backend handling media uploads and automated publishing workflows, with
-          token-based authentication for secure API access.
+          Built a CRUD Task Manager API and progressively evolved its storage layer
+          across three versions: in-memory, SQLite with a repository-pattern
+          architecture, and PostgreSQL running in Docker. Swapping SQLite for Postgres
+          required only a new repository class and a two-line dependency change —
+          routes and service logic never changed. Verified persistence at each stage,
+          including confirming data survives a full container teardown via Docker
+          Compose, since Postgres's data lives in a named volume, not the container
+          itself.
         </p>
         <ul class="tech-list">
-          <li>Python</li><li>FastAPI</li><li>REST APIs</li>
+          <li>Python</li><li>FastAPI</li><li>SQLite</li><li>PostgreSQL</li>
+          <li>Docker</li><li>Docker Compose</li>
         </ul>
-        <p class="project-note">
-          Core source is private due to API credentials — happy to walk through the
-          architecture directly.
-        </p>
-        <a class="project-link" href="https://github.com/123farzana123/fastapi-instagram-publisher" target="_blank" rel="noopener">GitHub →</a>
+        <a class="project-link" href="https://github.com/123farzana123/postgres-docker-task-api" target="_blank" rel="noopener">GitHub (Postgres/Docker) →</a>
+        <a class="project-link" href="https://github.com/123farzana123/CRUD-to-SQLite-database" target="_blank" rel="noopener" style="margin-left: 12px;">GitHub (SQLite) →</a>
       </div>
     </article>
 
@@ -259,9 +264,8 @@
         <h3>Backend AI Engineering Intern <span class="tag">self-paced</span></h3>
         <p class="timeline-org">Fly Rank AI · Remote</p>
         <ul>
-          <li>Self-directed internship: choose and build backend/AI practice projects independently, without a fixed company codebase</li>
-          <li>Practicing REST API design, database operations, and AI feature integration</li>
-          <li>Building comfort working independently in a real-world-style development environment</li>
+            <li>Self-directed practice project: designed and iteratively re-architected a Task Manager API, progressing from in-memory to SQLite to containerized PostgreSQL storage (see Projects)</li>
+            <li>Practicing REST API design, database operations, and AI-assisted development independently, without a fixed company codebase</li>
         </ul>
       </div>
     </article>

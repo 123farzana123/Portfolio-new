@@ -519,6 +519,7 @@ main {
 .contact-card {
   position: relative;
   display: grid;
+  margin-inline: auto;
   gap: var(--space-4);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
@@ -581,6 +582,292 @@ main {
   color: #16A34A;
   margin-bottom: var(--space-2);
 }
+
+/* ==================================================
+   CASE STUDIES
+================================================== */
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-7) 0;
+}
+
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.case-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-3);
+}
+
+.case-card ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0 0;
+}
+.case-card li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+.card-link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: var(--space-3);
+}
+
+/* Full case study write-ups */
+#case-studies article[id^="case-"] {
+  display: none;
+}
+#case-studies article[id^="case-"].is-open {
+  display: block;
+}
+
+.case-close-link {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#case-studies article[id^="case-"] {
+  max-width: 68ch;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid var(--line);
+}
+#case-studies article[id^="case-"]:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#case-studies article[id^="case-"] h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-5);
+}
+
+#case-studies article[id^="case-"] h4 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--main);
+  margin: var(--space-5) 0 var(--space-2) 0;
+}
+
+#case-studies article[id^="case-"] p,
+#case-studies article[id^="case-"] li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#case-studies article[id^="case-"] ul {
+  padding-left: 18px;
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* ==================================================
+   CONTENT PORTFOLIO / MARKETING WORK CARDS
+================================================== */
+
+#content-portfolio,
+#ai-marketing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+#content-portfolio > header,
+#ai-marketing > header {
+  flex: 1 1 100%;
+}
+
+#content-portfolio > article,
+#ai-marketing > article {
+  flex: 1 1 280px;
+}
+
+#ai-marketing > article {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+#ai-marketing > article h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+#ai-marketing > article p { color: var(--muted); }
+
+#ai-marketing > article ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+#ai-marketing > article li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  padding: 3px 0;
+}
+
+.content-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.content-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.content-card p { color: var(--muted); }
+
+.content-card ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+.content-card li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  padding: 3px 0;
+}
+
+/* ==================================================
+   CREATIVE DESIGN GALLERY
+================================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+.gallery-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 0;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-card img,
+.gallery-card video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--surface);
+  color: transparent;
+}
+
+.gallery-card figcaption {
+  padding: var(--space-4) var(--space-5);
+}
+
+.gallery-card h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-2);
+}
+
+.gallery-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.gallery-carousel {
+  position: relative;
+}
+
+.carousel-track {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.carousel-track img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--surface);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-track img.is-active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+.carousel-btn:hover { background: var(--surface); }
+.carousel-prev { left: var(--space-3); }
+.carousel-next { right: var(--space-3); }
+
+.carousel-dots {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dot.is-active { background: #fff; }
 
 /* ==================================================
    FOOTER

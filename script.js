@@ -56,4 +56,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* CASE STUDIES — click to open/close */
+  const caseLinks = document.querySelectorAll('.card-link[href^="#case-"]');
+
+  caseLinks.forEach(link => {
+    const targetId = link.getAttribute("href").slice(1);
+    const article = document.getElementById(targetId);
+    if (!article) return;
+
+    // add a "Close" link at the end of the article, once
+    const closeLink = document.createElement("a");
+    closeLink.textContent = "Close ↑";
+    closeLink.className = "case-close-link";
+    closeLink.href = "#case-studies";
+    article.appendChild(closeLink);
+
+    const openArticle = (e) => {
+      e.preventDefault();
+      document.querySelectorAll('#case-studies article[id^="case-"].is-open')
+        .forEach(open => { if (open !== article) open.classList.remove("is-open"); });
+      article.classList.add("is-open");
+      article.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    link.addEventListener("click", openArticle);
+
+    closeLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      article.classList.remove("is-open");
+      document.getElementById("case-studies").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  /* GALLERY CAROUSEL */
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-track img');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    let current = 0;
+
+    const goTo = (index) => {
+      slides[current].classList.remove('is-active');
+      dots[current].classList.remove('is-active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+      dots[current].classList.add('is-active');
+    };
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  });
+
 });
